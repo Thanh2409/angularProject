@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <strong> Tinh Thuong Tet Nguyen Dang</strong>
+        </div>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label>Ho ten</label>
+                <input type="text" class="form-control" [(ngModel)]="nhanvien.hoten"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Luong</label>
+                <input type="number" class="form-control" [(ngModel)]="nhanvien.luong"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Gioi Tinh</label>
+                <input type="radio" value="nam" name="gender" [(ngModel)]="nhanvien.gioitinh"
+                    [ngModelOptions]="{standalone: true}">nam
+                <input type="radio" value="nu" name="gender" [(ngModel)]="nhanvien.gioitinh"
+                    [ngModelOptions]="{standalone: true}">nu
+            </div>
+            <div class="form-group">
+                <label>Tuoi</label>
+                <select [(ngModel)]="nhanvien.rate" [ngModelOptions]="{standalone: true}" class='form-control'>
+                    <option *ngFor="let p of dotuoi" value="{{p.rate}}">{{p.tuoi}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="card-header">
+        <strong>
+            Tien Thuong: {{tienthuong() | currency: " " }}
+        </strong>
+
+    </div>
+</div>

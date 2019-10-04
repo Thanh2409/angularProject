@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-header ">
+            <strong>Ban Hang Giai Khat</strong>
+        </div>
+        <div class="card-body ">
+            <table class="table-bordered table">
+            <thead class="text-center">
+                <tr>
+                    <th>Ten Hang</th>
+                    <th>So Luong</th>
+                    <th>Don Gia</th>
+                    <th>Thanh Tien</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let p of dulieu">
+                    <td>
+                        <input type="checkbox" (click)="disable(p.name)">{{p.name}}
+                    </td>
+                    <td>
+                        <input type="text" [disabled]="p.disable" [(ngModel)]="p.soluong" [ngModelOptions]="{standalone: true}" (keyup)="tinhtien(p.name)">
+                    </td>
+                    <td>
+                        {{p.dongia}}
+                    </td>
+                    <td>
+                        {{p.soluong*p.dongia}}
+                    </td>
+                </tr>
+            </tbody>
+            <div class="card-header">
+                <strong>Tong Tien: {{tongtien()}}</strong>
+            </div>
+        </table>
+        </div>
+    </div>
+</div>

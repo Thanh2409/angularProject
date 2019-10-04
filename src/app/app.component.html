@@ -1,4 +1,21 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/student']">Lab2</a>
+          </li>
 
-<div class="container">
-        <router-outlet></router-outlet>
-</div> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+              Lab5
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" [routerLink]="['/form']">1.1</a>
+              <a class="dropdown-item" [routerLink]="['/sinhvien']">1.2</a>
+              <a class="dropdown-item" [routerLink]="['/tinhthuong']">2</a>
+              <a class="dropdown-item" [routerLink]="['/giaikhat']">3</a>
+              <a class="dropdown-item" [routerLink]="['/tinhthuongcheck']">4</a>
+            </div>
+          </li>
+        </ul>
+</nav>
+      <router-outlet></router-outlet>
